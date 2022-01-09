@@ -1,0 +1,123 @@
+create table Employee(
+	empId char(10) NOT NULL unique,
+	name varchar(255) NOT NULL,
+    panCardNo char(10) NOT NULL unique,
+    drivingLicenseNo char(15) NOT NULL unique,
+    aadharNo char(12) NOT NULL unique,
+    phoneNo char(10) NOT NULL unique,
+    address varchar(255) NOT NULL,
+    dob date NOT NULL,
+    emergencyPhoneNo char(10) NOT NULL,
+    role varchar(32) NOT NULL,
+    password varchar(255) NOT NULL,
+    PRIMARY KEY (empId)
+);
+
+
+create table Vehicle(
+	regNo char(10) NOT NULL unique,
+	available varchar(32) NOT NULL,
+    distanceTravelled int NOT NULL,
+    buyingPrice int NOT NULL,
+    handlerId char(10) NOT NULL,
+    purchaseYear int NOT NULL,
+    company varchar(255) NOT NULL,
+    color varchar(255) NOT NULL,
+    model varchar(255) NOT NULL,
+    seatingCapacity int NOT NULL,
+    PRIMARY KEY (regNo)
+);
+
+create TABLE Trip(
+	tripNo char(10) NOT NULL unique,
+    driverId char(10) NOT NULL,
+    journeyDistance int NOT NULL,
+    customerId char(10) NOT NULL,
+    fuelConsumed int NOT NULL,
+    vehicleRegNo char(10) NOT NULL,
+    receiptNo char(10) NOT NULL,
+    PRIMARY KEY (tripNo)
+);
+
+create table Emergency(
+	phoneNo char(10) NOT NULL unique,
+    forWhom char(10) NOT NULL,
+	name varchar(255) NOT NULL,
+    relation varchar(255) NOT NULL,
+    PRIMARY KEY (phoneNo)
+);
+
+create table EmployeeInsuranceDetails(
+	insuranceNo char(10) NOT NULL unique,
+    currentStatus varchar(32),
+	insuranceProvider varchar(255),
+    startingDate date NOT NULL,
+    expiryDate date NOT NULL,
+    insuranceType varchar(255),
+    amountInsured int unsigned,
+    beneficary varchar(255),
+    PRIMARY KEY (insuranceNo)
+);
+
+create table AttendanceAndSalary(
+	empid char(10) NOT NULL unique,
+    yearAndMonth char(7) NOT NULL,
+    salary int unsigned,
+    noOfDaysPresent int unsigned,
+    bonus int unsigned,
+    perks varchar(255),
+    primary key (empid, yearAndMonth)
+);
+
+
+
+
+create table Fine(
+	finedVehicleRegNo char(10) NOT NULL,
+	finedEmpId char(10) NOT NULL,
+    offense varchar(255) NOT NULL,
+    finedAmount int NOT NULL
+);
+
+create table VehicleDoc(
+	regCertificateNo char(10) NOT NULL unique,
+    pollutionCheckCertificateNo char(10) NOT NULL unique,
+    expiryForPollutionCheckCertificate date NOT NULL,
+    currentInsuranceNo char(10) NOT NULL unique,
+    PRIMARY KEY (regCertificateNo)
+);
+
+
+create table VehicleInsuranceDetails(
+	insuranceNo char(10) NOT NULL unique,
+    insuranceProvider varchar(255) NOT NULL,
+    startingDate date NOT NULL,
+    expiryDate date NOT NULL,
+    currentStatus varchar(32) NOT NULL,
+    amountInsuranced int unsigned NOT NULL,
+    insuranceType varchar(255) NOT NULL,
+    benificary varchar(255),
+    PRIMARY KEY (insuranceNo)
+);
+
+
+
+CREATE TABLE Customer(
+	customerId char(10) NOT NULL unique,
+    name varchar(255) NOT NULL,
+    gender varchar(32) NOT NULL,
+    phoneNo char(10) NOT NULL unique,
+    email varchar(255) NOT NULL,
+    dob date,
+    PRIMARY KEY (customerId)
+);
+
+CREATE TABLE Payment(
+	paymentReceiptNo char(10) NOT NULL unique,
+    dateOfPayment date NOT NULL,
+    amountPaid int unsigned NOT NULL,
+    tripNo char(10) NOT NULL unique,
+    taxes int unsigned NOT NULL,
+    fines int unsigned,
+    PRIMARY KEY (paymentReceiptNo)
+);

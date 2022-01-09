@@ -1,0 +1,72 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Logged Home Page</title>
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <!--    <link rel="stylesheet" type="text/css" href="style.css">-->
+    <link rel="stylesheet"  th:href="@{/css/loggedhomepage.css}">
+
+
+</head>
+<body>
+<h1>Welcome to Jain Travels</h1>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Logged Home Page</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/showemployee}" class="btn btn-primary anchorbox">Show Employee</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/showvehicle}" class="btn btn-primary anchorbox">Show Vehicle</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/showtrip}" class="btn btn-primary anchorbox">Show Trip</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/register}" class="btn btn-primary anchorbox">Register Employee</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/vehicleregister}" class="btn btn-primary anchorbox">Register Vehicle</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/tripregister}" class="btn btn-primary anchorbox">Register Trip</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/deleteemployee}" class="btn btn-primary anchorbox">Delete Employee</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/deletevehicle}" class="btn btn-primary anchorbox">Delete Vehicle</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/deletetrip}" class="btn btn-primary anchorbox">Delete Trip</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a th:href="@{/logout}" class="btn btn-primary anchorbox">Logout</a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    JainTravels Properties
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

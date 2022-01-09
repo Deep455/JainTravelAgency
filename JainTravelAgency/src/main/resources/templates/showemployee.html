@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet"  th:href="@{/css/showemployee.css}">
+</head>
+<body>
+<h2>Employee List</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Emp Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Address</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Emergency Phone No</th>
+        <th scope="col">Role</th>
+    </tr>
+    </thead>
+    <tr th:each="employee : ${employeelist}">
+        <td th:text="${employee.empId}">1</td>
+        <td th:text="${employee.name}">1</td>
+        <td th:text="${employee.phoneNo}">1</td>
+        <td th:text="${employee.address}">1</td>
+        <td th:text="${employee.dob}">1</td>
+        <td th:text="${employee.emergencyPhoneNo}">1</td>
+        <td th:text="${employee.role}">1</td>
+        <br/>
+    </tr>
+</table>
+<div class="d-flex justify-content-center links">
+    <a th:href="@{/register}" class="btn btn-primary anchorbox">Add Employee</a>
+</div>
+<div class="d-flex justify-content-center links">
+    <a th:href="@{/deleteemployee}" class="btn btn-primary anchorbox">Delete Employee</a>
+</div>
+<div class="d-flex justify-content-center links">
+    <a th:href="@{/loggedhomepage}" class="btn btn-primary anchorbox">Logged Homepage</a>
+</div>
+</div>
+</body>
+</html>
